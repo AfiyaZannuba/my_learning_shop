@@ -296,9 +296,12 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    {{ 'application.css' | asset_url | stylesheet_tag }}
+  
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+  <body class="bg-red-900 italic text-xl gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -309,7 +312,8 @@
 
     {% sections 'header-group' %}
 
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <main id="MainContent" class="bg-red-900 content-for-layout focus-none" role="main" tabindex="-1">
+      Hi There
       {{ content_for_layout }}
     </main>
 
